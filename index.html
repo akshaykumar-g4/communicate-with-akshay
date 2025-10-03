@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Communicate with Akshay</title>
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* CRITICAL FIX: Stops the fixed header from covering the content */
+        html {
+            scroll-padding-top: 80px; /* Adjust this value if your header height changes */
+        }
+        
+        /* Apply the custom font globally */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Style for the WhatsApp button to add a small hover transform */
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Custom backdrop for the modal */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-900 text-gray-200">
+
+    <header class="bg-black shadow-xl fixed w-full top-0 z-50 border-b border-yellow-500">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <a href="#home" class="text-2xl font-extrabold text-yellow-500 hover:text-yellow-300" aria-label="Go to Home">
+                Communicate with Akshay
+            </a>
+            <div class="space-x-8 hidden md:flex font-medium text-lg">
+                <a href="#home" class="text-gray-200 hover:text-yellow-500 transition duration-300">Home</a>
+                <a href="#about" class="text-gray-200 hover:text-yellow-500 transition duration-300">About</a>
+                <a href="#courses" class="text-gray-200 hover:text-yellow-500 transition duration-300">Program</a>
+                <a href="#" class="modal-open-btn text-gray-200 hover:text-yellow-500 transition duration-300" data-target="#other-courses-modal">Other Courses</a>
+                <a href="#" class="modal-open-btn text-gray-200 hover:text-yellow-500 transition duration-300" data-target="#resources-modal">Resources</a>
+                <a href="#" class="modal-open-btn text-gray-200 hover:text-yellow-500 transition duration-300" data-target="#testimonial-modal">Testimonials</a>
+                <a href="#contact" class="text-gray-200 hover:text-yellow-500 transition duration-300">Contact</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-gray-200 hover:text-yellow-500 focus:outline-none" aria-label="Toggle navigation">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 pb-4">
+            <a href="#home" class="block py-2 px-4 text-center text-gray-200 hover:bg-yellow-500 hover:text-gray-900 transition duration-300">Home</a>
+            <a href="#about" class="block py-2 px-4 text-center text-gray-200 hover:bg-yellow-500 hover:text-gray-900 transition duration-300">About</a>
+            <a href="#courses" class="block py-2 px-4 text-center text-gray-200 hover:bg-yellow-500 hover:text-gray-900 transition duration-300">Program</a>
+            <a href="#" class="modal-open-btn block py-2 px-4 text-center text-gray-200 hover:bg-yellow-500 hover:text-gray-900 transition duration-300" data-target="#other-courses-modal">Other Courses</a>
+            <a href="#" class="modal-open-btn block py-2 px-4 text-center text-gray-200 hover:bg-yellow-500 hover:text-gray-900 transition duration-300" data-target="#resources-modal">Resources</a>
+            <a href="#" class="modal-open-btn block py-2 px-4 text-center text-gray-200 hover:bg-yellow-500 hover:text-gray-900 transition duration-300" data-target="#testimonial-modal">Testimonials</a>
+            <a href="#contact" class="block py-2 px-4 text-center text-gray-200 hover:bg-yellow-500 hover:text-gray-900 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <section id="home" class="pt-36 pb-24 bg-gradient-to-br from-yellow-600 to-yellow-800 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-5 leading-tight">Master English & Communication Skills</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">Join our intensive 3-month program to build speaking fluency, confidence, and powerful public speaking skills.</p>
+            
+            <a href="https://wa.me/916302484859" target="_blank"
+                class="whatsapp-btn inline-flex items-center space-x-2 bg-black text-yellow-400 font-bold text-lg px-8 py-4 rounded-full shadow-2xl hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-yellow-400"
+                aria-label="Join now via WhatsApp">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C7.3 2 3.4 5.9 3.4 10.6c0 1.6.4 3.1 1.2 4.5l-1.3 4.9 5.2-1.3c1.3.7 2.8 1.1 4.5 1.1 4.7 0 8.6-3.9 8.6-8.6S16.7 2 12.04 2zm3.3 13.9l-.7.8c-.5.5-1.2.7-1.9.7-1.1 0-2.3-.6-3.2-1.5-.9-.9-1.5-2.1-1.5-3.2 0-.7.2-1.4.7-1.9l.8-.7c.3-.3.8-.3 1.1 0l.9.9c.3.3.3.8 0 1.1l-.6.6c-.3.3-.3.8 0 1.1l1.5 1.5c.3.3.8.3 1.1 0l.6-.6c.3-.3.8-.3 1.1 0l.9.9c.3.3.3.8 0 1.1z"/></svg>
+                <span>Start Your Learning Journey Today</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gray-900 shadow-inner">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xl font-semibold text-gray-400 mb-6">Your partner in achieving unshakable English confidence.</p>
+            <div class="flex flex-wrap justify-center gap-x-12 gap-y-6 text-2xl text-yellow-500 font-bold">
+                <span>Multiple batches have successfully completed.</span>
+                <span class="text-yellow-300">80% Success Rate</span>
+                <span>Practical & Highly Engaging Sessions</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 container mx-auto px-6">
+        <h3 class="text-2xl font-extrabold text-center mb-12 text-yellow-500">About Me, Your Mentor!</h3>
+        <div class="max-w-5xl mx-auto rounded-xl shadow-2xl overflow-hidden relative">
+            <div class="absolute inset-0 bg-cover bg-center" 
+                 style="background-image: url('bgimage.jpg');">
+            </div>
+            <div class="relative z-10 p-8 md:p-12 bg-black/70 text-white space-y-6 text-center">
+                <p>Hello, I'm <span class="font-bold text-yellow-400">Akshay</span>. I am the Initiator and Mentor at <span class="font-bold">Communicate with Akshay</span> dedicated to helping people overcome real-world communication challenges. My focus is especially on students in schools and colleges/universities, as well as working professionals in their workplaces and organizations.</p>
+                <p>With over 3 years of online teaching experience, I have developed an interactive and practical teaching style that goes beyond theory. My sessions emphasize spoken English, impromptu speaking, group discussions, and more—ensuring that you don’t just learn, but actively speak and perform.</p>
+                <p>My mission is simple: to help you achieve complete fluency and unshakable confidence, so you are fully prepared for any real-life, professional, or social conversation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="bg-black py-20 px-6">
+        <h3 class="text-4xl font-extrabold text-center mb-12 text-yellow-500">Our 3-Month Transformation Program</h3>
+        <div class="grid md:grid-cols-3 gap-8 container mx-auto max-w-6xl">
+            <div class="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-[1.02] transition duration-300">
+                <div class="text-4xl text-yellow-500 mb-3">--------------------</div> 
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">Month 1: English Foundations & Basic Communication</h4>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Core Grammar & Vocabulary</li>
+                    <li>Tenses & Speaking Practice</li>
+                    <li>Listening & Reading Skills</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-[1.02] transition duration-300">
+                <div class="text-4xl text-yellow-500 mb-3">--------------------</div> 
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">Month 2: Practical Communication & Fluency Building</h4>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Impromptu Speaking Challenges</li>
+                    <li>Public Speaking & Professional Communication (Basic)</li>
+                    <li>Exposure to various techniques for communication skills</li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl transform hover:scale-[1.02] transition duration-300">
+                <div class="text-4xl text-yellow-500 mb-3">--------------------</div> 
+                <h4 class="text-2xl font-bold text-gray-900 mb-3">Month 3: Professional & Real-World Communication</h4>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Essential Professional Skills & Strategy</li>
+                    <li>Presentation & Resume Building</li>
+                    <li>Professional Emailing & Netiquette</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 container mx-auto px-6">
+        <h3 class="text-4xl font-extrabold text-center mb-12 text-yellow-500">Ready to Transform Your English?</h3>
+        <div class="max-w-xl mx-auto text-center text-xl space-y-6 bg-black p-8 rounded-xl shadow-lg border border-yellow-500">
+            <p class="font-semibold text-2xl text-yellow-400">Connect with Akshay Directly</p>
+            <p>Email: <a href="mailto:pilliakshaykumar2004@gmail.com" class="text-yellow-500 font-medium hover:text-yellow-300 transition duration-300">pilliakshaykumar2004@gmail.com</a></p>
+            <p>WhatsApp: 
+                <a href="https://wa.me/916302484859" target="_blank" class="text-yellow-500 font-medium hover:text-yellow-300 transition duration-300">Click to Message</a>
+            </p>
+            <p class="pt-4">Or fill out our quick <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqa48ub2lRrBFXqhWVceuHyAGVGMrCFW69hRNF2qtx6Gzp4A/viewform?usp=header" target="_blank" class="text-yellow-600 font-bold underline hover:text-yellow-300 transition duration-300">Enrollment & Demo Class Form</a>.</p>
+        </div>
+    </section>
+
+    <footer class="bg-black text-gray-400 py-8 text-center border-t border-yellow-500">
+        <p class="mb-2">Language is not just a tool;<span class="text-yellow-500"></span>It is a direct reflection of your professional personality.</p>
+        <p class="text-sm opacity-75">© 2025 Communicate with Akshay. All Rights Reserved.</p>
+    </footer>
+
+    <div id="testimonial-modal" class="hidden fixed inset-0 z-[100] overflow-y-auto modal-backdrop">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-gray-900 rounded-lg shadow-2xl w-full max-w-2xl" role="dialog" aria-modal="true" aria-labelledby="modal-title-test">
+                <div class="p-6 border-b border-yellow-500 flex justify-between items-center">
+                    <h3 class="text-2xl font-bold text-yellow-400" id="modal-title-test">Student Success Stories (Testimonials)</h3>
+                    <button class="modal-close-btn text-gray-400 hover:text-white transition duration-200 focus:outline-none" aria-label="Close modal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div class="p-6 space-y-6">
+                    <div class="bg-black p-4 rounded-lg border border-gray-700">
+                        <p class="italic text-gray-300">"Before the program, I struggled with interviews. Akshay's emphasis on impromptu speaking changed everything. I landed my first job with confidence!"</p>
+                        <p class="mt-2 text-sm font-semibold text-yellow-500">- Rahul S., Job Seeker</p>
+                    </div>
+                    <div class="bg-black p-4 rounded-lg border border-gray-700">
+                        <p class="italic text-gray-300">"The professional emailing module in Month 3 was invaluable. I communicate more clearly with my international team now."</p>
+                        <p class="mt-2 text-sm font-semibold text-yellow-500">- Priya K., Working Professional</p>
+                    </div>
+                    <p class="text-center text-gray-400">Ready to share your success? Join the program today!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="other-courses-modal" class="hidden fixed inset-0 z-[100] overflow-y-auto modal-backdrop">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-gray-900 rounded-lg shadow-2xl w-full max-w-xl" role="dialog" aria-modal="true" aria-labelledby="modal-title-other">
+                <div class="p-6 border-b border-yellow-500 flex justify-between items-center">
+                    <h3 class="text-2xl font-bold text-yellow-400" id="modal-title-other">Other Specialized Courses</h3>
+                    <button class="modal-close-btn text-gray-400 hover:text-white transition duration-200 focus:outline-none" aria-label="Close modal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-3xl font-bold text-white mb-4 flex items-center">
+                        <span class="mr-3 text-yellow-400">.</span> Python Programming: Fundamentals
+                    </h4>
+                    <p class="text-gray-300 mb-6">
+                        Description: This intensive course covers Python fundamentals. Perfect for students looking to build a good foundation in coding.
+                    </p>
+                    <p class="text-lg font-semibold text-yellow-300 mb-6">Duration: 3months | Format: Live Online</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSemby5LYhhoI-dza8Jn8K0DYylTU_q8IzGCR-ozp2hFE3HapQ/viewform?usp=header" target="_blank"
+                       class="inline-block bg-yellow-500 text-gray-900 font-bold text-lg px-8 py-3 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300">
+                        Enrollment Form (Python)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="resources-modal" class="hidden fixed inset-0 z-[100] overflow-y-auto modal-backdrop">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-gray-900 rounded-lg shadow-2xl w-full max-w-2xl" role="dialog" aria-modal="true" aria-labelledby="modal-title-resources">
+                <div class="p-6 border-b border-yellow-500 flex justify-between items-center">
+                    <h3 class="text-2xl font-bold text-yellow-400" id="modal-title-resources">Resources for Communication Mastery</h3>
+                    <button class="modal-close-btn text-gray-400 hover:text-white transition duration-200 focus:outline-none" aria-label="Close modal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div class="p-6 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="w-48 h-64 bg-gray-700 flex-shrink-0 rounded-lg overflow-hidden shadow-xl border-4 border-yellow-500">
+                        <img src="book_cover.jpg" alt="Book Cover: Mastering English and Communication Skills" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="flex-grow text-center md:text-left">
+                        <h4 class="text-3xl font-bold text-white mb-3">My Upcoming Book: COMMUNICATE WITH AKSHAY</h4>
+                        <p class="text-gray-300 mb-4">
+                            Description: A comprehensive guide distilled from years of learning experience and study, covering techniques for spontaneous conversation, professional articulation, and building confidence in any social setting. The essential handbook for your perfection.
+                        </p>
+                        <div class="inline-block bg-yellow-600 text-white font-bold text-sm px-4 py-1 rounded-full uppercase tracking-wider">
+                            Available Soon...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // ----------------------------------------------------------------
+    // 1. NAVIGATION & SMOOTH SCROLL SCRIPTS
+    // ----------------------------------------------------------------
+
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Mobile menu toggle functionality
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            
+            // Close mobile menu if it's open
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+
+            if (target) {
+                target.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        });
+    });
+
+    // ----------------------------------------------------------------
+    // 2. UNIVERSAL MODAL SCRIPTS (Handles all three pop-ups)
+    // ----------------------------------------------------------------
+    
+    // Function to close all open modals and restore scrolling
+    function closeAllModals() {
+        document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+            modal.classList.add('hidden');
+        });
+        document.body.style.overflow = ''; 
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+             mobileMenu.classList.add('hidden'); 
+        }
+    }
+
+    // Event listener for opening modals (using the data-target attribute)
+    document.querySelectorAll('.modal-open-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const targetModal = document.querySelector(targetId);
+
+            if (targetModal) {
+                closeAllModals(); // Close any currently open modal first
+                targetModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    // Event listener for closing modals (using the generic modal-close-btn class)
+    document.querySelectorAll('.modal-close-btn').forEach(button => {
+        button.addEventListener('click', closeAllModals);
+    });
+
+    // Close modal when clicking outside (on the backdrop)
+    document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            // Check if the click occurred directly on the modal's backdrop
+            if (e.target === modal) {
+                closeAllModals();
+            }
+        });
+    });
+
+    // Close modal on ESC key press
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.querySelector('[id$="-modal"]:not(.hidden)')) {
+            closeAllModals();
+        }
+    });
+
+</script>
+
+</body>
+</html>
